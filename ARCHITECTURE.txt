@@ -3,7 +3,8 @@
  --- ARCHITECTURE ---  (ajouter ligne dans championnat à la main)
 
 
-=> code à utiliser une fois: ajouter DB tout les clubs (https://www.lequipe.fr/Football/ligue-1/page-classement-equipes/general)
+=> code à utiliser une fois: ajouter DB tout les clubs 
+BOUCLE FOR pour chaque équipe (https://www.lequipe.fr/Football/ligue-1/page-classement-equipes/general) :
     table teams : name, city, coach_name, president, date_creation
     table players : name, position, birthdate, nationality
     table participations: team_id(Database récupérer l'id), championship_id)
