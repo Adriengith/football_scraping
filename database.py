@@ -1,12 +1,13 @@
 import sqlite3
+from sqlite3.dbapi2 import connect
 
 # created_at TIMESTAMP
 # updated_at_at TIMESTAMP
 
 class Database:
     def __init__(self):
-        connexion = sqlite3.connect("football.db")
-        self.c = connexion.cursor()
+        self.connexion = sqlite3.connect("football.db")
+        self.c = self.connexion.cursor()
 
     def create_table_teams(self):
         self.c.execute("""CREATE TABLE IF NOT EXISTS teams (
@@ -32,7 +33,7 @@ class Database:
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name VARCHAR,
             position VARCHAR,
-            birthdate DATETIME,
+            birthdate TEXT,
             nationality VARCHAR
         );""")
 
@@ -97,6 +98,32 @@ class Database:
             FOREIGN KEY (team_id)
             REFERENCES teams(id) 
         );""")
+
+    def insert_table_championships(self,name,country,start_year,end_year):
+        with self.connexion:
+            self.c.execute("INSERT INTO championships (name,country,start_year,end_year) VALUES (?,?,?,?)", (name,country,start_year,end_year))
+
+    def insert_table_teams(self,name,city,coach_name,president,date_creation):
+        with self.connexion:
+            self.c.execute("INSERT INTO teams (name,city,coach_name,president,date_creation) VALUES (?,?,?,?,?)", (name,city,coach_name,president,date_creation))
+
+    def insert_table_players(self,name,position,birthdate,nationality):
+        with self.connexion:
+            self.c.execute("INSERT INTO players (name,position,birthdate,nationality) VALUES (?,?,?,?)", (name,position,birthdate,nationality))
+
+
+
+    def insert_table_participations(self,team_id,championship_id):
+        with self.connexion:
+            self.c.execute("INSERT INTO participations (team_id,championship_id) VALUES (?,?)", (team_id,championship_id))
+
+
+
+
+
+
+
+
 
 
 

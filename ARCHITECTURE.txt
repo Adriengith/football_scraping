@@ -1,6 +1,6 @@
 
 """
- --- ARCHITECTURE ---  (ajouter ligne dans championnat à la main)
+ --- ARCHITECTURE ---  (ajouter ligne dans championships à la main)
 
 
 => code à utiliser une fois: ajouter DB tout les clubs 

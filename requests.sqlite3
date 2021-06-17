@@ -1,9 +1,12 @@
 SELECT * FROM teams
 
 
+SELECT * FROM championships;
 
 
 
+SELECT * FROM players;
 
 
 
+SELECT * FROM participations
