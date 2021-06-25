@@ -1,12 +1,24 @@
-SELECT * FROM teams
+
 
 
 SELECT * FROM championships;
 
 
-
-SELECT * FROM players;
-
-
+SELECT * FROM teams
 
 SELECT * FROM participations
+
+SELECT * FROM contracts --BOUCLE FOR  A FAIRE POUR TOUTES LES EQUIPES
+
+SELECT * FROM players; --BOUCLE FOR  A FAIRE POUR TOUTES LES EQUIPES
+
+
+SELECT * FROM matches
+
+SELECT * FROM matches_teams
+
+SELECT * FROM goals;
+
+
+
+SELECT * FROM teams where city = 'Lille';
